@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 import requests
 from pydantic import BaseModel
+import os
 
 """Creates the FastAPI app"""
 app = FastAPI()
@@ -23,9 +24,14 @@ def reset_board():
     cell_class = ["cell","cell","cell","cell","cell","cell","cell","cell","cell"]
     cell_body = ["","","","","","","","",""]
 
-"""Address of the API-SERVER"""
-#API_BASE_URL = "http://127.0.0.1:8000"
-API_BASE_URL = "http://api-server:8000"
+"""
+Address of the API-SERVER
+check if running from orchestrated containers 
+"""
+if os.environ.get('IN_CONTAINER', False): 
+    API_BASE_URL = "http://api-server:8000"
+else:
+    API_BASE_URL = "http://127.0.0.1:8000"
 
 @app.get("/")
 def index(request: Request):
