@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vittoria!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #2d6a4f;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .winner {
+            font-size: 2em;
+            font-weight: bold;
+            color: #218c47;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        input[type="submit"] {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218c47;
+        }
+
+        input[type="submit"]:active {
+            background-color: #1d7f3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vittoria!</h1>
+        <div class="winner">{{player}} ha vinto!</div>
+        <div class="message">Congratulazioni al vincitore! Grazie per aver giocato.</div>
+        <form action="/" method="GET">
+            <input type="submit" value="Inizia una Nuova Partita">
+        </form>
+    </div>
+</body>
+</html>

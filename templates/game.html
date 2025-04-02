@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco del Tris</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #2d6a4f;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            justify-content: center;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+            color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .cell.x {
+            background-color: lightblue;
+            color: blue;
+            font-weight: bold;
+        }
+        .cell.o {
+            background-color: lightcoral;
+            color: red;
+            font-weight: bold;
+        }
+        .cell:hover {
+            background-color: #f0f0f0;
+        }
+        input[type="submit"] {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218c47;
+        }
+        input[type="submit"]:active {
+            background-color: #1d7f3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gioco del Tris</h1>
+        <form action="/move" method="POST" class="grid">
+            <button class="{{ cell_class_0 }}" type="submit" name="position" value="0">{{ cell_body_0 }}</button>
+            <button class="{{ cell_class_1 }}" type="submit" name="position" value="1">{{ cell_body_1 }}</button>
+            <button class="{{ cell_class_2 }}" type="submit" name="position" value="2">{{ cell_body_2 }}</button>
+            <button class="{{ cell_class_3 }}" type="submit" name="position" value="3">{{ cell_body_3 }}</button>
+            <button class="{{ cell_class_4 }}" type="submit" name="position" value="4">{{ cell_body_4 }}</button>
+            <button class="{{ cell_class_5 }}" type="submit" name="position" value="5">{{ cell_body_5 }}</button>
+            <button class="{{ cell_class_6 }}" type="submit" name="position" value="6">{{ cell_body_6 }}</button>
+            <button class="{{ cell_class_7 }}" type="submit" name="position" value="7">{{ cell_body_7 }}</button>
+            <button class="{{ cell_class_8 }}" type="submit" name="position" value="8">{{ cell_body_8 }}</button>
+        </form>
+        <form action="/" method="GET">
+            <input type="submit" value="Termina Partita">
+        </form>
+    </div>
+</body>
+</html>
