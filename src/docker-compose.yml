@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api-server:
+    build: ./api-server
+    ports:
+      - "8000:8000"
+    container_name: api-server
+  
+  html-server:
+    build: ./html-server
+    ports:
+      - "8001:8001"
+    container_name: html-server
+    depends_on:
+      - api-server

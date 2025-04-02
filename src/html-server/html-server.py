@@ -7,8 +7,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 """Creates the Jinja2Templates"""
-templates = Jinja2Templates(directory="../templates")
-
+templates = Jinja2Templates(directory="./templates")
 
 """Creates the local data structures representing the board graphics"""
 cell_class = ["cell","cell","cell","cell","cell","cell","cell","cell","cell"]
@@ -25,7 +24,8 @@ def reset_board():
     cell_body = ["","","","","","","","",""]
 
 """Address of the API-SERVER"""
-API_BASE_URL = "http://127.0.0.1:8000"
+#API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = "http://api-server:8000"
 
 @app.get("/")
 def index(request: Request):
