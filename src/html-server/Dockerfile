@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt
 COPY html-server.py .
 COPY /templates/ ./templates/
 
-EXPOSE 8000
+EXPOSE 8001
 
 ENV IN_CONTAINER=Yes
 
